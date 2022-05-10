@@ -1,21 +1,19 @@
-﻿#include <iostream>
+#include <iostream>
+
 using namespace std;
-
-double foo(double k)
-{
-    double p = 2 * sqrt(3) * ((pow(-1, k)) / (pow(3, k) * (2 * k + 1)));
-    return p;
-
-
-}
 
 
 int main()
 {
-    double k;
-    cin >> k;
-    cout << foo(k);
+    int i;
+    double E, a = 1.0, s = 1.0;
+    cin >> E;
+    for ( i = 0; fabs(a *= (double) pow(-1, i) / (pow(3, i) * (2 * i + 1))) >= E; i++) {
 
+        s += a;
+    }
+    double x = 2 * pow(3, 1 / 2);
+    cout << s << endl;
 
     return 0;
 }
